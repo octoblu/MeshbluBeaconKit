@@ -10,12 +10,9 @@
 Pod::Spec.new do |s|
   s.name             = "MeshbluBeaconKit"
   s.version          = "0.1.0"
-  s.summary          = "A short description of MeshbluBeaconKit."
+  s.summary          = "Easily connection iBeacons to Meshblu"
   s.description      = <<-DESC
-                       An optional longer description of MeshbluBeaconKit
-
-                       * Markdown format.
-                       * Don't worry about the indent, we strip it!
+		       Handles all the complexity of ranging iBeacons and connecting them to Meshblu
                        DESC
   s.homepage         = "https://github.com/octoblu/MeshbluBeaconKit"
   # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
