@@ -17,11 +17,11 @@ Pod::Spec.new do |s|
                        * Markdown format.
                        * Don't worry about the indent, we strip it!
                        DESC
-  s.homepage         = "https://github.com/<GITHUB_USERNAME>/MeshbluBeaconKit"
+  s.homepage         = "https://github.com/octoblu/MeshbluBeaconKit"
   # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
   s.license          = 'MIT'
   s.author           = { "Sqrt of Octoblu" => "sqrt@octoblu.com" }
-  s.source           = { :git => "https://github.com/<GITHUB_USERNAME>/MeshbluBeaconKit.git", :tag => s.version.to_s }
+  s.source           = { :git => "https://github.com/octoblu/MeshbluBeaconKit.git", :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.platform     = :ios, '8.0'
@@ -33,6 +33,6 @@ Pod::Spec.new do |s|
   }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.frameworks = 'CoreLocation'
+  s.dependency 'MeshbluKit', '~> 0.1.0'
 end
