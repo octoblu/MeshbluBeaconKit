@@ -35,7 +35,7 @@ PODS:
 DEPENDENCIES:
   - FBSnapshotTestCase
   - MeshbluBeaconKit (from `../`)
-  - MeshbluKit (from `../../MeshbluKit`)
+  - MeshbluKit
   - Nimble
   - Nimble-Snapshots
   - Quick
@@ -43,14 +43,12 @@ DEPENDENCIES:
 EXTERNAL SOURCES:
   MeshbluBeaconKit:
     :path: ../
-  MeshbluKit:
-    :path: ../../MeshbluKit
 
 SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
   FBSnapshotTestCase: 3dc3899168747a0319c5278f5b3445c13a6532dd
-  MeshbluBeaconKit: 69f7cfb148ac7590598cc5205e0c1c3245e473a0
-  MeshbluKit: eb358de704d63d610e00afdd046716165a1d231b
+  MeshbluBeaconKit: 679773ce58e724a04d9685a369da340c98ecb1e8
+  MeshbluKit: 64e8355ed02fcb138a7545397b9298a5ea1821a2
   Nimble: 49b7a7da8919f42823d37c6d68cc6d15a7009f32
   Nimble-Snapshots: 216ae8c0ea3f4105be1606749fe15d8b2138af40
   Quick: 824572d3d198d51e52cf4aa722cebf7e59952a35
