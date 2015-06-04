@@ -18,7 +18,7 @@ import Dollar
   optional  func beaconEnteredRegion()
   optional  func beaconExitedRegion()
   optional  func meshbluBeaconIsUnregistered()
-  optional  func meshbluBeaconRegistrationSuccess(device: NSData)
+  optional  func meshbluBeaconRegistrationSuccess(device: [String: AnyObject])
   optional  func meshbluBeaconRegistrationFailure(error: NSError)
 }
 
@@ -46,11 +46,11 @@ import Dollar
   public func start(beaconUuid: String, delegate: MeshbluBeaconKitDelegate) {
     self.beaconUuid = beaconUuid
     self.delegate = delegate
-  
+    
     let beaconIdentifier = "iBeaconModules.us"
     let beaconUUID:NSUUID? = NSUUID(UUIDString: self.beaconUuid)
     let beaconRegion:CLBeaconRegion = CLBeaconRegion(proximityUUID:beaconUUID, identifier: beaconIdentifier)
-
+    
     if(locationManager.respondsToSelector("requestAlwaysAuthorization")) {
       if CLLocationManager.authorizationStatus() == .NotDetermined {
         locationManager.requestAlwaysAuthorization()
@@ -73,13 +73,17 @@ import Dollar
   
   public func register() {
     let device = ["type": "device:beacon-blu", "online" : "true"]
-
+    
     self.meshbluHttp!.register(device) { (result) -> () in
       switch result {
       case let .Failure(error):
         self.delegate?.meshbluBeaconRegistrationFailure!(result.error!)
       case let .Success(success):
-        self.delegate?.meshbluBeaconRegistrationSuccess!(success.value.rawData()!)
+        let json = success.value
+        var data = Dictionary<String, AnyObject>()
+        data["uuid"] = json["uuid"].stringValue
+        data["token"] = json["token"].stringValue
+        self.delegate?.meshbluBeaconRegistrationSuccess!(data)
       }
     }
   }
@@ -113,7 +117,7 @@ import Dollar
       code = 0
       lastProximity = CLProximity.Unknown
     }
-
+    
     self.delegate?.proximityChanged!(code)
   }
   
@@ -137,7 +141,7 @@ import Dollar
     didExitRegion region: CLRegion!) {
       manager.stopRangingBeaconsInRegion(region as! CLBeaconRegion)
       manager.stopUpdatingLocation()
-
+      
       self.delegate?.beaconExitedRegion!()
   }
   
