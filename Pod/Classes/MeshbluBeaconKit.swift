@@ -11,6 +11,7 @@ import CoreLocation
 import MeshbluKit
 import SwiftyJSON
 import Result
+import Dollar
 
 @objc public protocol MeshbluBeaconKitDelegate {
   optional  func proximityChanged (code: Int)
@@ -30,11 +31,21 @@ import Result
   var delegate: MeshbluBeaconKitDelegate?
   let locationManager = CLLocationManager()
   
-  public func start(beaconUuid: String, meshbluConfig: [String: AnyObject], delegate: MeshbluBeaconKitDelegate) {
-    self.beaconUuid = beaconUuid
-    self.delegate = delegate
+  public init(meshbluConfig: [String: AnyObject]) {
     self.meshbluConfig = meshbluConfig
     self.meshbluHttp = MeshbluHttp(meshbluConfig: meshbluConfig)
+    super.init()
+  }
+  
+  public init(meshbluHttp: MeshbluHttp) {
+    self.meshbluConfig = [:]
+    self.meshbluHttp = meshbluHttp
+    super.init()
+  }
+  
+  public func start(beaconUuid: String, delegate: MeshbluBeaconKitDelegate) {
+    self.beaconUuid = beaconUuid
+    self.delegate = delegate
   
     let beaconIdentifier = "iBeaconModules.us"
     let beaconUUID:NSUUID? = NSUUID(UUIDString: self.beaconUuid)
@@ -130,7 +141,7 @@ import Result
       self.delegate?.beaconExitedRegion!()
   }
   
-  public func sendLocationUpdate(payload: [String: AnyObject]){
+  public func sendLocationUpdate(payload: [String: AnyObject], handler: (Result<JSON, NSError>) -> ()){
     var message = Dictionary<String, AnyObject>()
     var code = 0
     var proximity = "Unknown"
@@ -150,17 +161,19 @@ import Result
       proximity = "Unknown"
     }
     
-    payload
-
-    message["payload"] = [
+    let defaultPayload : [String: AnyObject] = [
       "proximity" : proximity,
       "code" : code
     ]
+    
+    var newPayload : [String: AnyObject] = $.merge(payload, defaultPayload)
+    message["payload"] = newPayload
     message["devices"] = ["*"]
     message["topic"] = "location_update"
     
     self.meshbluHttp!.message(message) {
       (result) -> () in
+      handler(result)
       NSLog("Message Sent: \(message)")
     }
   }
