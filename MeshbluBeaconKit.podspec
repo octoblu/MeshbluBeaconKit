@@ -9,7 +9,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "MeshbluBeaconKit"
-  s.version          = "0.2.0"
+  s.version          = "0.2.1"
   s.summary          = "Easily connection iBeacons to Meshblu"
   s.description      = <<-DESC
 		       Handles all the complexity of ranging iBeacons and connecting them to Meshblu
@@ -31,6 +31,6 @@ Pod::Spec.new do |s|
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   s.frameworks = 'CoreLocation'
-  s.dependency 'MeshbluKit', '~> 0.3.2'
+  s.dependency 'MeshbluKit'
   s.dependency 'Dollar', '~> 3.0.1'
 end
