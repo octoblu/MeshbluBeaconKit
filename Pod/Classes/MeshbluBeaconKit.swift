@@ -14,7 +14,7 @@ import Result
 import Dollar
 
 @objc public protocol MeshbluBeaconKitDelegate {
-  optional  func proximityChanged (code: Int)
+  optional  func proximityChanged(response: [String: AnyObject])
   optional  func beaconEnteredRegion()
   optional  func beaconExitedRegion()
   optional  func meshbluBeaconIsUnregistered()
@@ -89,36 +89,43 @@ import Dollar
   }
   
   public func locationManager(manager: CLLocationManager!, didRangeBeacons beacons:[AnyObject]!, inRegion region: CLBeaconRegion!) {
-    var code: Int = -1
+    var code = 0
+    var message = "Unknown"
+    var nearestBeacon = CLBeacon()
+    
     if(beacons.count > 0) {
-      let nearestBeacon:CLBeacon = beacons[0] as! CLBeacon
+      nearestBeacon = beacons[0] as! CLBeacon
+    }
       
-      if(nearestBeacon.proximity == lastProximity) {
-        return;
-      }
-      lastProximity = nearestBeacon.proximity;
+    if(nearestBeacon.proximity == lastProximity) {
+      return;
+    }
+
+    lastProximity = nearestBeacon.proximity;
       
-      switch nearestBeacon.proximity {
-      case CLProximity.Far:
-        code = 3
-      case CLProximity.Near:
-        code = 2
-      case CLProximity.Immediate:
-        code = 1
-      case CLProximity.Unknown:
-        code = 0
-      }
-    } else {
-      
-      if(lastProximity == CLProximity.Unknown) {
-        return;
-      }
-      
+    switch nearestBeacon.proximity {
+    case CLProximity.Far:
+      code = 3
+      message = "Far"
+    case CLProximity.Near:
+      code = 2
+      message = "Near"
+    case CLProximity.Immediate:
+      code = 1
+      message = "Immediate"
+    case CLProximity.Unknown:
       code = 0
-      lastProximity = CLProximity.Unknown
+      message = "Unknown"
     }
     
-    self.delegate?.proximityChanged!(code)
+    let response : [String: AnyObject] = [
+      "message": message,
+      "code": code,
+      "major": nearestBeacon.major,
+      "minor": nearestBeacon.minor
+    ]
+
+    self.delegate?.proximityChanged!(response)
   }
   
   public func locationManager(manager: CLLocationManager!,
@@ -146,34 +153,11 @@ import Dollar
   }
   
   public func sendLocationUpdate(payload: [String: AnyObject], handler: (Result<JSON, NSError>) -> ()){
-    var message = Dictionary<String, AnyObject>()
-    var code = 0
-    var proximity = "Unknown"
-    
-    switch lastProximity {
-    case CLProximity.Far:
-      code = 3
-      proximity = "Far"
-    case CLProximity.Near:
-      code = 2
-      proximity = "Near"
-    case CLProximity.Immediate:
-      code = 1
-      proximity = "Immediate"
-    case CLProximity.Unknown:
-      code = 0
-      proximity = "Unknown"
-    }
-    
-    let defaultPayload : [String: AnyObject] = [
-      "proximity" : proximity,
-      "code" : code
+    var message : [String: AnyObject] = [
+      "devices" : ["*"],
+      "payload" : payload,
+      "topic" : "location_update"
     ]
-    
-    var newPayload : [String: AnyObject] = $.merge(payload, defaultPayload)
-    message["payload"] = newPayload
-    message["devices"] = ["*"]
-    message["topic"] = "location_update"
     
     self.meshbluHttp!.message(message) {
       (result) -> () in

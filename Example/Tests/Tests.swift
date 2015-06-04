@@ -50,15 +50,7 @@ class MeshbluBeaconKitSpec: QuickSpec {
         it("should be a broadcast message") {
           expect(responseJSON["devices"].array) == ["*"]
         }
-        
-        it("should be a have a payload with a proximity") {
-          expect(responseJSON["payload"]["proximity"].string) == "Unknown"
-        }
-        
-        it("should be a have a payload with a code") {
-          expect(responseJSON["payload"]["code"].number) == 0
-        }
-        
+                
         it("should be a merge a custom payload into the message payload") {
           expect(responseJSON["payload"]["czar"].string) == "car"
         }
