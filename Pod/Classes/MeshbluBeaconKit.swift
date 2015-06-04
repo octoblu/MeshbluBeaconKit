@@ -64,6 +64,7 @@ import Dollar
     locationManager.startRangingBeaconsInRegion(beaconRegion)
     if CLLocationManager.locationServicesEnabled() {
       locationManager.startUpdatingLocation()
+      locationManager.startUpdatingHeading()
     }
     
     if (self.meshbluConfig!["uuid"] == nil) {
@@ -118,12 +119,58 @@ import Dollar
       message = "Unknown"
     }
     
-    let response : [String: AnyObject] = [
-      "message": message,
-      "code": code,
-      "major": nearestBeacon.major,
-      "minor": nearestBeacon.minor
+    println(self.locationManager.location)
+    
+    let location = self.locationManager.location
+    let heading = self.locationManager.heading
+    
+    let dateFor = NSDateFormatter()
+    dateFor.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+    
+    var response : [String: AnyObject] = [
+      "platform": "ios",
+      "version": NSProcessInfo.processInfo().operatingSystemVersionString,
+      "libraryVersion": MeshbluBeaconKit.version(),
+      "beacon": [
+        "uuid": nearestBeacon.proximityUUID.UUIDString,
+        "major": nearestBeacon.major,
+        "minor": nearestBeacon.minor
+      ],
+      "proximity": [
+        "message": message,
+        "code": code,
+        "rssi": nearestBeacon.rssi,
+        "accuracy": nearestBeacon.accuracy,
+        "timestamp": dateFor.stringFromDate(NSDate())
+      ]
     ]
+    
+    if (location != nil) {
+      var level = 0
+      if (location.floor != nil) {
+        level = location.floor.level
+      }
+
+      response["location"] = [
+        "coordinates": [location.coordinate.latitude, location.coordinate.longitude],
+        "altitude": location.altitude,
+        "floor": level,
+        "horizontalAccuracy": location.horizontalAccuracy,
+        "verticalAccuracy": location.verticalAccuracy,
+        "timestamp": dateFor.stringFromDate(location.timestamp)
+      ]
+    }
+    
+    if (heading != nil) {
+      response["heading"] = [
+        "magneticHeading": heading.magneticHeading,
+        "trueHeading": heading.trueHeading,
+        "headingAccuracy": heading.headingAccuracy,
+        "timestamp": dateFor.stringFromDate(heading.timestamp)
+      ]
+    }
+    
+    println("Sending response: \(response)")
 
     self.delegate?.proximityChanged!(response)
   }
@@ -133,6 +180,7 @@ import Dollar
   {
     if status == .AuthorizedAlways || status == .AuthorizedWhenInUse {
       manager.startUpdatingLocation()
+      manager.startUpdatingHeading()
     }
   }
   
