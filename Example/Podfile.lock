@@ -1,43 +1,25 @@
 PODS:
-  - AFNetworking (2.5.4):
-    - AFNetworking/NSURLConnection (= 2.5.4)
-    - AFNetworking/NSURLSession (= 2.5.4)
-    - AFNetworking/Reachability (= 2.5.4)
-    - AFNetworking/Security (= 2.5.4)
-    - AFNetworking/Serialization (= 2.5.4)
-    - AFNetworking/UIKit (= 2.5.4)
-  - AFNetworking/NSURLConnection (2.5.4):
-    - AFNetworking/Reachability
-    - AFNetworking/Security
-    - AFNetworking/Serialization
-  - AFNetworking/NSURLSession (2.5.4):
-    - AFNetworking/Reachability
-    - AFNetworking/Security
-    - AFNetworking/Serialization
-  - AFNetworking/Reachability (2.5.4)
-  - AFNetworking/Security (2.5.4)
-  - AFNetworking/Serialization (2.5.4)
-  - AFNetworking/UIKit (2.5.4):
-    - AFNetworking/NSURLConnection
-    - AFNetworking/NSURLSession
-  - FBSnapshotTestCase (1.8.1)
-  - MeshbluBeaconKit (0.1.0):
-    - MeshbluKit (~> 0.1.0)
-  - MeshbluKit (0.1.0):
-    - AFNetworking (~> 2.3)
+  - Alamofire (1.2.2)
+  - Box (1.2.2)
+  - Cent (3.0.1):
+    - Dollar (~> 3.0.1)
+  - Dollar (3.0.1)
+  - MeshbluBeaconKit (0.2.0):
+    - Cent (~> 3.0.1)
+    - MeshbluKit (~> 0.3.2)
+  - MeshbluKit (0.3.2):
+    - Alamofire (~> 1.2)
+    - Result (~> 0.4.3)
+    - SwiftyJSON (~> 2.2.0)
   - Nimble (0.4.2)
-  - Nimble-Snapshots (0.4.0):
-    - FBSnapshotTestCase (~> 1.7)
-    - Nimble (~> 0.4)
-    - Quick (~> 0.3)
   - Quick (0.3.1)
+  - Result (0.4.3):
+    - Box (~> 1.2)
+  - SwiftyJSON (2.2.0)
 
 DEPENDENCIES:
-  - FBSnapshotTestCase
   - MeshbluBeaconKit (from `../`)
-  - MeshbluKit
   - Nimble
-  - Nimble-Snapshots
   - Quick
 
 EXTERNAL SOURCES:
@@ -45,12 +27,15 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
-  FBSnapshotTestCase: 3dc3899168747a0319c5278f5b3445c13a6532dd
-  MeshbluBeaconKit: 679773ce58e724a04d9685a369da340c98ecb1e8
-  MeshbluKit: 64e8355ed02fcb138a7545397b9298a5ea1821a2
+  Alamofire: 11a6022f5089887d92ffb5a3014c97a0a915ab98
+  Box: a92e8aa4c099e6bc0733829665caf9e668ef53b8
+  Cent: eb8da65c1b35207038f982cce20d2a18aa46527c
+  Dollar: abd25582c46a218d7af38ff8762abbc4d8466d73
+  MeshbluBeaconKit: 6f0a2ed3dda6f76b72fce331e53c21b4d53e4559
+  MeshbluKit: 0a4b8b2f2cb685c94a3fbed4fff876d82824600f
   Nimble: 49b7a7da8919f42823d37c6d68cc6d15a7009f32
-  Nimble-Snapshots: 216ae8c0ea3f4105be1606749fe15d8b2138af40
   Quick: 824572d3d198d51e52cf4aa722cebf7e59952a35
+  Result: 910839ce03c5c573ec94026678b7cecb69ee862e
+  SwiftyJSON: 0b3e6c07af17ff745e77e8e9984097b55c956e5c
 
 COCOAPODS: 0.37.2

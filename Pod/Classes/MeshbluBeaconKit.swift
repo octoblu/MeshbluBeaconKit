@@ -8,27 +8,36 @@
 
 import Foundation
 import CoreLocation
+import MeshbluKit
+import SwiftyJSON
+import Result
 
 @objc public protocol MeshbluBeaconKitDelegate {
   optional  func proximityChanged (code: Int)
   optional  func beaconEnteredRegion()
   optional  func beaconExitedRegion()
+  optional  func meshbluBeaconIsUnregistered()
+  optional  func meshbluBeaconRegistrationSuccess(device: NSData)
+  optional  func meshbluBeaconRegistrationFailure(error: NSError)
 }
-
 
 @objc (MeshbluBeaconKit) public class MeshbluBeaconKit: NSObject, CLLocationManagerDelegate {
   
   var lastProximity = CLProximity.Unknown
-  public var uuid = ""
+  public var beaconUuid = ""
+  public var meshbluConfig : [String: AnyObject]?
+  var meshbluHttp : MeshbluHttp?
   var delegate: MeshbluBeaconKitDelegate?
   let locationManager = CLLocationManager()
   
-  public func start(uuid: String, delegate: MeshbluBeaconKitDelegate) {
-    self.uuid = uuid
+  public func start(beaconUuid: String, meshbluConfig: [String: AnyObject], delegate: MeshbluBeaconKitDelegate) {
+    self.beaconUuid = beaconUuid
     self.delegate = delegate
+    self.meshbluConfig = meshbluConfig
+    self.meshbluHttp = MeshbluHttp(meshbluConfig: meshbluConfig)
   
     let beaconIdentifier = "iBeaconModules.us"
-    let beaconUUID:NSUUID? = NSUUID(UUIDString: self.uuid)
+    let beaconUUID:NSUUID? = NSUUID(UUIDString: self.beaconUuid)
     let beaconRegion:CLBeaconRegion = CLBeaconRegion(proximityUUID:beaconUUID, identifier: beaconIdentifier)
 
     if(locationManager.respondsToSelector("requestAlwaysAuthorization")) {
@@ -44,6 +53,23 @@ import CoreLocation
     locationManager.startRangingBeaconsInRegion(beaconRegion)
     if CLLocationManager.locationServicesEnabled() {
       locationManager.startUpdatingLocation()
+    }
+    
+    if (self.meshbluConfig!["uuid"] == nil) {
+      self.delegate?.meshbluBeaconIsUnregistered!()
+    }
+  }
+  
+  public func register() {
+    let device = ["type": "device:beacon-blu", "online" : "true"]
+
+    self.meshbluHttp!.register(device) { (result) -> () in
+      switch result {
+      case let .Failure(error):
+        self.delegate?.meshbluBeaconRegistrationFailure!(result.error!)
+      case let .Success(success):
+        self.delegate?.meshbluBeaconRegistrationSuccess!(success.value.rawData()!)
+      }
     }
   }
   
@@ -76,7 +102,7 @@ import CoreLocation
       code = 0
       lastProximity = CLProximity.Unknown
     }
-    NSLog("Something happened %i", code)
+
     self.delegate?.proximityChanged!(code)
   }
   
@@ -102,5 +128,40 @@ import CoreLocation
       manager.stopUpdatingLocation()
 
       self.delegate?.beaconExitedRegion!()
+  }
+  
+  public func sendLocationUpdate(payload: [String: AnyObject]){
+    var message = Dictionary<String, AnyObject>()
+    var code = 0
+    var proximity = "Unknown"
+    
+    switch lastProximity {
+    case CLProximity.Far:
+      code = 3
+      proximity = "Far"
+    case CLProximity.Near:
+      code = 2
+      proximity = "Near"
+    case CLProximity.Immediate:
+      code = 1
+      proximity = "Immediate"
+    case CLProximity.Unknown:
+      code = 0
+      proximity = "Unknown"
+    }
+    
+    payload
+
+    message["payload"] = [
+      "proximity" : proximity,
+      "code" : code
+    ]
+    message["devices"] = ["*"]
+    message["topic"] = "location_update"
+    
+    self.meshbluHttp!.message(message) {
+      (result) -> () in
+      NSLog("Message Sent: \(message)")
+    }
   }
 }

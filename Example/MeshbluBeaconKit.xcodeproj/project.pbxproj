@@ -7,75 +7,39 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0D5B19E1B432DE36D4FADBAB /* Pods_MeshbluBeaconKit_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D11F5A2CE6ABDE85433A7170 /* Pods_MeshbluBeaconKit_Tests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
-		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
-		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
-		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
-		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
-		7E18C3D90A493A3A6179740C /* Pods_MeshbluBeaconKit_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B98A2B8255215B250428D486 /* Pods_MeshbluBeaconKit_Example.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		CBBA8529D6AEA2A6871790A4 /* Pods_MeshbluBeaconKit_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8135E5810088C9E2C8C0A0E3 /* Pods_MeshbluBeaconKit_Tests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		607FACE61AFB9204008FA782 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 607FACC81AFB9204008FA782 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 607FACCF1AFB9204008FA782;
-			remoteInfo = MeshbluBeaconKit;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		40260D1C22C7945552808C79 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		4441238680B2A663B073A592 /* Pods-MeshbluBeaconKit_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeshbluBeaconKit_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MeshbluBeaconKit_Example/Pods-MeshbluBeaconKit_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		44D81FB93296DD5B3A9E7492 /* MeshbluBeaconKit.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = MeshbluBeaconKit.podspec; path = ../MeshbluBeaconKit.podspec; sourceTree = "<group>"; };
-		607FACD01AFB9204008FA782 /* MeshbluBeaconKit_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeshbluBeaconKit_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		607FACD71AFB9204008FA782 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		607FACDA1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		362F52FEE805136CE6416CA0 /* Pods-MeshbluBeaconKit_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeshbluBeaconKit_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MeshbluBeaconKit_Tests/Pods-MeshbluBeaconKit_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		41D947D36B520E187A41EF0C /* MeshbluBeaconKit.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = MeshbluBeaconKit.podspec; path = ../MeshbluBeaconKit.podspec; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* MeshbluBeaconKit_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MeshbluBeaconKit_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		6B29164C28DF8E688FB106FD /* Pods-MeshbluBeaconKit_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeshbluBeaconKit_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-MeshbluBeaconKit_Example/Pods-MeshbluBeaconKit_Example.release.xcconfig"; sourceTree = "<group>"; };
-		99D72E720A126EF05662B70B /* Pods-MeshbluBeaconKit_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeshbluBeaconKit_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MeshbluBeaconKit_Tests/Pods-MeshbluBeaconKit_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		A3B9B6B556AB552A1AF138E0 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		B98A2B8255215B250428D486 /* Pods_MeshbluBeaconKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MeshbluBeaconKit_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D11F5A2CE6ABDE85433A7170 /* Pods_MeshbluBeaconKit_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MeshbluBeaconKit_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F29A479ED34C516E2952A114 /* Pods-MeshbluBeaconKit_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeshbluBeaconKit_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MeshbluBeaconKit_Tests/Pods-MeshbluBeaconKit_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		6AF0909717C239E9842EE7F0 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		8135E5810088C9E2C8C0A0E3 /* Pods_MeshbluBeaconKit_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MeshbluBeaconKit_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE9E5D535F841C874B56D494 /* Pods-MeshbluBeaconKit_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeshbluBeaconKit_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MeshbluBeaconKit_Tests/Pods-MeshbluBeaconKit_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		FA3EE6DFD21C30C527CFE7CA /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		607FACCD1AFB9204008FA782 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7E18C3D90A493A3A6179740C /* Pods_MeshbluBeaconKit_Example.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		607FACE21AFB9204008FA782 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0D5B19E1B432DE36D4FADBAB /* Pods_MeshbluBeaconKit_Tests.framework in Frameworks */,
+				CBBA8529D6AEA2A6871790A4 /* Pods_MeshbluBeaconKit_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		04EF4E13B75E48F30319F93E /* Pods */ = {
+		1E3DFFC580D3106CBFD5D608 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				4441238680B2A663B073A592 /* Pods-MeshbluBeaconKit_Example.debug.xcconfig */,
-				6B29164C28DF8E688FB106FD /* Pods-MeshbluBeaconKit_Example.release.xcconfig */,
-				99D72E720A126EF05662B70B /* Pods-MeshbluBeaconKit_Tests.debug.xcconfig */,
-				F29A479ED34C516E2952A114 /* Pods-MeshbluBeaconKit_Tests.release.xcconfig */,
+				362F52FEE805136CE6416CA0 /* Pods-MeshbluBeaconKit_Tests.debug.xcconfig */,
+				CE9E5D535F841C874B56D494 /* Pods-MeshbluBeaconKit_Tests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -84,43 +48,19 @@
 			isa = PBXGroup;
 			children = (
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
-				607FACD21AFB9204008FA782 /* Example for MeshbluBeaconKit */,
 				607FACE81AFB9204008FA782 /* Tests */,
 				607FACD11AFB9204008FA782 /* Products */,
-				04EF4E13B75E48F30319F93E /* Pods */,
-				CD15308BCA54A44BCA1E37BB /* Frameworks */,
+				1E3DFFC580D3106CBFD5D608 /* Pods */,
+				F4458098BA6A98EA81AA22FB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		607FACD11AFB9204008FA782 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				607FACD01AFB9204008FA782 /* MeshbluBeaconKit_Example.app */,
 				607FACE51AFB9204008FA782 /* MeshbluBeaconKit_Tests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		607FACD21AFB9204008FA782 /* Example for MeshbluBeaconKit */ = {
-			isa = PBXGroup;
-			children = (
-				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
-				607FACD71AFB9204008FA782 /* ViewController.swift */,
-				607FACD91AFB9204008FA782 /* Main.storyboard */,
-				607FACDC1AFB9204008FA782 /* Images.xcassets */,
-				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
-				607FACD31AFB9204008FA782 /* Supporting Files */,
-			);
-			name = "Example for MeshbluBeaconKit";
-			path = MeshbluBeaconKit;
-			sourceTree = "<group>";
-		};
-		607FACD31AFB9204008FA782 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				607FACD41AFB9204008FA782 /* Info.plist */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		607FACE81AFB9204008FA782 /* Tests */ = {
@@ -143,18 +83,17 @@
 		607FACF51AFB993E008FA782 /* Podspec Metadata */ = {
 			isa = PBXGroup;
 			children = (
-				44D81FB93296DD5B3A9E7492 /* MeshbluBeaconKit.podspec */,
-				A3B9B6B556AB552A1AF138E0 /* README.md */,
-				40260D1C22C7945552808C79 /* LICENSE */,
+				41D947D36B520E187A41EF0C /* MeshbluBeaconKit.podspec */,
+				6AF0909717C239E9842EE7F0 /* README.md */,
+				FA3EE6DFD21C30C527CFE7CA /* LICENSE */,
 			);
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
-		CD15308BCA54A44BCA1E37BB /* Frameworks */ = {
+		F4458098BA6A98EA81AA22FB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B98A2B8255215B250428D486 /* Pods_MeshbluBeaconKit_Example.framework */,
-				D11F5A2CE6ABDE85433A7170 /* Pods_MeshbluBeaconKit_Tests.framework */,
+				8135E5810088C9E2C8C0A0E3 /* Pods_MeshbluBeaconKit_Tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -162,41 +101,20 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		607FACCF1AFB9204008FA782 /* MeshbluBeaconKit_Example */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "MeshbluBeaconKit_Example" */;
-			buildPhases = (
-				9F4AE0C4512794ABD83E5CE2 /* Check Pods Manifest.lock */,
-				607FACCC1AFB9204008FA782 /* Sources */,
-				607FACCD1AFB9204008FA782 /* Frameworks */,
-				607FACCE1AFB9204008FA782 /* Resources */,
-				306D39058895DF99092B823E /* Embed Pods Frameworks */,
-				FC672959ADCE07C501663008 /* Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = MeshbluBeaconKit_Example;
-			productName = MeshbluBeaconKit;
-			productReference = 607FACD01AFB9204008FA782 /* MeshbluBeaconKit_Example.app */;
-			productType = "com.apple.product-type.application";
-		};
 		607FACE41AFB9204008FA782 /* MeshbluBeaconKit_Tests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACF21AFB9204008FA782 /* Build configuration list for PBXNativeTarget "MeshbluBeaconKit_Tests" */;
 			buildPhases = (
-				E6ECA2F0C7500DE75D4A1228 /* Check Pods Manifest.lock */,
+				485F2927AF0382B800831D57 /* Check Pods Manifest.lock */,
 				607FACE11AFB9204008FA782 /* Sources */,
 				607FACE21AFB9204008FA782 /* Frameworks */,
 				607FACE31AFB9204008FA782 /* Resources */,
-				3A7154941D179CC6180C7C78 /* Embed Pods Frameworks */,
-				8B1BB264387B7AB432FFE30E /* Copy Pods Resources */,
+				B165D285287D58956A7BEE74 /* Embed Pods Frameworks */,
+				A222A50DD136505EFAF41996 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				607FACE71AFB9204008FA782 /* PBXTargetDependency */,
 			);
 			name = MeshbluBeaconKit_Tests;
 			productName = Tests;
@@ -212,9 +130,6 @@
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
-					607FACCF1AFB9204008FA782 = {
-						CreatedOnToolsVersion = 6.3.1;
-					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
 						TestTargetID = 607FACCF1AFB9204008FA782;
@@ -234,23 +149,12 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				607FACCF1AFB9204008FA782 /* MeshbluBeaconKit_Example */,
 				607FACE41AFB9204008FA782 /* MeshbluBeaconKit_Tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		607FACCE1AFB9204008FA782 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
-				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
-				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		607FACE31AFB9204008FA782 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -261,37 +165,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		306D39058895DF99092B823E /* Embed Pods Frameworks */ = {
+		485F2927AF0382B800831D57 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MeshbluBeaconKit_Example/Pods-MeshbluBeaconKit_Example-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		3A7154941D179CC6180C7C78 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MeshbluBeaconKit_Tests/Pods-MeshbluBeaconKit_Tests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8B1BB264387B7AB432FFE30E /* Copy Pods Resources */ = {
+		A222A50DD136505EFAF41996 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -306,63 +195,24 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MeshbluBeaconKit_Tests/Pods-MeshbluBeaconKit_Tests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		9F4AE0C4512794ABD83E5CE2 /* Check Pods Manifest.lock */ = {
+		B165D285287D58956A7BEE74 /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		E6ECA2F0C7500DE75D4A1228 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		FC672959ADCE07C501663008 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MeshbluBeaconKit_Example/Pods-MeshbluBeaconKit_Example-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MeshbluBeaconKit_Tests/Pods-MeshbluBeaconKit_Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		607FACCC1AFB9204008FA782 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
-				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		607FACE11AFB9204008FA782 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -372,33 +222,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		607FACE71AFB9204008FA782 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 607FACCF1AFB9204008FA782 /* MeshbluBeaconKit_Example */;
-			targetProxy = 607FACE61AFB9204008FA782 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		607FACD91AFB9204008FA782 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				607FACDA1AFB9204008FA782 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		607FACDE1AFB9204008FA782 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				607FACDF1AFB9204008FA782 /* Base */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		607FACED1AFB9204008FA782 /* Debug */ = {
@@ -482,37 +305,10 @@
 			};
 			name = Release;
 		};
-		607FACF01AFB9204008FA782 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4441238680B2A663B073A592 /* Pods-MeshbluBeaconKit_Example.debug.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = MeshbluBeaconKit/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MODULE_NAME = ExampleApp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		607FACF11AFB9204008FA782 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6B29164C28DF8E688FB106FD /* Pods-MeshbluBeaconKit_Example.release.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = MeshbluBeaconKit/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MODULE_NAME = ExampleApp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 		607FACF31AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 99D72E720A126EF05662B70B /* Pods-MeshbluBeaconKit_Tests.debug.xcconfig */;
+			baseConfigurationReference = 362F52FEE805136CE6416CA0 /* Pods-MeshbluBeaconKit_Tests.debug.xcconfig */;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -530,9 +326,8 @@
 		};
 		607FACF41AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F29A479ED34C516E2952A114 /* Pods-MeshbluBeaconKit_Tests.release.xcconfig */;
+			baseConfigurationReference = CE9E5D535F841C874B56D494 /* Pods-MeshbluBeaconKit_Tests.release.xcconfig */;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -552,15 +347,6 @@
 			buildConfigurations = (
 				607FACED1AFB9204008FA782 /* Debug */,
 				607FACEE1AFB9204008FA782 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "MeshbluBeaconKit_Example" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				607FACF01AFB9204008FA782 /* Debug */,
-				607FACF11AFB9204008FA782 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

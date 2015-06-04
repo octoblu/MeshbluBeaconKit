@@ -1,17 +1,9 @@
 source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
 
-target 'MeshbluBeaconKit_Example', :exclusive => true do
-  pod "MeshbluKit"
-  pod "MeshbluBeaconKit", :path => "../"
-end
-
 target 'MeshbluBeaconKit_Tests', :exclusive => true do
-  pod "MeshbluKit"
   pod "MeshbluBeaconKit", :path => "../"
 
   pod 'Quick'
   pod 'Nimble'
-  pod 'FBSnapshotTestCase'
-  pod 'Nimble-Snapshots'
 end
