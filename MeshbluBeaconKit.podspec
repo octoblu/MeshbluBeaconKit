@@ -9,7 +9,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "MeshbluBeaconKit"
-  s.version          = "1.0.0"
+  s.version          = "1.1.0"
   s.summary          = "Easily connection iBeacons to Meshblu"
   s.description      = <<-DESC
 		       Handles all the complexity of ranging iBeacons and connecting them to Meshblu
