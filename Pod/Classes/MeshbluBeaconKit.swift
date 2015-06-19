@@ -33,6 +33,11 @@ import Dollar
 
   public init(meshbluConfig: [String: AnyObject], delegate: MeshbluBeaconKitDelegate) {
     self.meshbluHttp = MeshbluHttp(meshbluConfig: meshbluConfig)
+    let uuid = meshbluConfig["uuid"] as? String
+    let token = meshbluConfig["token"] as? String
+    if uuid != nil && token != nil {
+      self.meshbluHttp.setCredentials(uuid!, token: token!)
+    }
     self.delegate = delegate
     super.init()
   }
