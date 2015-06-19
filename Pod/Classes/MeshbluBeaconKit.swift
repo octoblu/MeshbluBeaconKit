@@ -229,7 +229,7 @@ import Dollar
     self.meshbluHttp.message(message) {
       (result) -> () in
       handler(result)
-      debugln("Message Sent: \(message)")
+      self.debugln("Message Sent: \(message)")
     }
   }
 }
