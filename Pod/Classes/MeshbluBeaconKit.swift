@@ -229,7 +229,7 @@ import Dollar
     self.meshbluHttp.message(message) {
       (result) -> () in
       handler(result)
-      NSLog("Message Sent: \(message)")
+      debugln("Message Sent: \(message)")
     }
   }
 }
