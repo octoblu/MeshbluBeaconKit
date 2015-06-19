@@ -43,6 +43,10 @@ import Dollar
     super.init()
   }
   
+  public func getMeshbluClient() -> MeshbluHttp {
+    return self.meshbluHttp
+  }
+  
   public func enableDebug(){
     self.debug = true
   }
