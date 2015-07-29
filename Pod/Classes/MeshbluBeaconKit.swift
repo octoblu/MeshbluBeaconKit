@@ -25,7 +25,7 @@ import Dollar
 @objc (MeshbluBeaconKit) public class MeshbluBeaconKit: NSObject, CLLocationManagerDelegate {
 
   var lastProximity = CLProximity.Unknown
-  public var beaconUuid = ""
+  var beaconTypes : [String: String] = [:]
   var meshbluHttp : MeshbluHttp
   var delegate: MeshbluBeaconKitDelegate
   let locationManager = CLLocationManager()
@@ -64,30 +64,38 @@ import Dollar
     println(message)
   }
 
-  public func start(beaconUuid: String, beaconIdentifier: String) {
-    self.beaconUuid = beaconUuid
+  public func start(beaconTypes: [String:String]) {
+    startLocationMonitoring()
+    
+    for (uuid, identifier) in beaconTypes {
+      startBeacon(uuid: uuid, identifier: identifier);
+    }
 
-    let beaconUUID:NSUUID? = NSUUID(UUIDString: self.beaconUuid)
-    let beaconRegion:CLBeaconRegion = CLBeaconRegion(proximityUUID:beaconUUID, identifier: beaconIdentifier)
-
+    if self.meshbluHttp.isNotRegistered() {
+      self.delegate.meshbluBeaconIsNotRegistered!()
+    }
+  }
+  
+  private func startBeacon(uuid: String, identifier: String){
+    let beaconUuid : NSUUID? = NSUUID(UUIDString: uuid)
+    let beaconRegion = CLBeaconRegion(proximityUUID: beaconUuid, identifier: identifier)
+    locationManager.startMonitoringForRegion(beaconRegion)
+    locationManager.startRangingBeaconsInRegion(beaconRegion)
+  }
+  
+  private func startLocationMonitoring(){
     if(locationManager.respondsToSelector("requestAlwaysAuthorization")) {
       if CLLocationManager.authorizationStatus() == .NotDetermined {
         locationManager.requestAlwaysAuthorization()
       }
     }
-
+    
     locationManager.delegate = self
     locationManager.pausesLocationUpdatesAutomatically = false
 
-    locationManager.startMonitoringForRegion(beaconRegion)
-    locationManager.startRangingBeaconsInRegion(beaconRegion)
     if CLLocationManager.locationServicesEnabled() {
       locationManager.startUpdatingLocation()
       locationManager.startUpdatingHeading()
-    }
-
-    if self.meshbluHttp.isNotRegistered() {
-      self.delegate.meshbluBeaconIsNotRegistered!()
     }
   }
 
