@@ -68,7 +68,7 @@ import Dollar
     startLocationMonitoring()
     
     for (uuid, identifier) in beaconTypes {
-      startBeacon(uuid: uuid, identifier: identifier);
+      startBeacon(uuid, identifier: identifier);
     }
 
     if self.meshbluHttp.isNotRegistered() {
