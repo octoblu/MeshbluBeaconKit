@@ -169,7 +169,7 @@ import Dollar
       "version": NSProcessInfo.processInfo().operatingSystemVersionString,
       "libraryVersion": MeshbluBeaconKit.version(),
       "beacon": [
-        "uuid": proximityUUID.UUIDString,
+        "uuid": proximityUuid.UUIDString,
         "major": nearestBeacon.major,
         "minor": nearestBeacon.minor
       ],
