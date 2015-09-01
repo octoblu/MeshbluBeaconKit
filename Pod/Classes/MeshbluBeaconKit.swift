@@ -158,13 +158,18 @@ import Dollar
 
     let dateFor = NSDateFormatter()
     dateFor.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
-
+    
+    var proximityUuid = nearestBeacon.proximityUUID
+    if proximityUuid == nil {
+      return self.debugln("No proximity uuid. Not sending location")
+    }
+    
     var response : [String: AnyObject] = [
       "platform": "ios",
       "version": NSProcessInfo.processInfo().operatingSystemVersionString,
       "libraryVersion": MeshbluBeaconKit.version(),
       "beacon": [
-        "uuid": nearestBeacon.proximityUUID.UUIDString,
+        "uuid": proximityUUID.UUIDString,
         "major": nearestBeacon.major,
         "minor": nearestBeacon.minor
       ],
