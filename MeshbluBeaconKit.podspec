@@ -31,6 +31,6 @@ Pod::Spec.new do |s|
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   s.frameworks = 'CoreLocation'
-  s.dependency 'MeshbluKit'
-  s.dependency 'Dollar', '~> 3.0.1'
+  s.dependency 'MeshbluKit', '~> 1.4.4'
+  s.dependency 'Dollar', '~> 4.0.1'
 end
