@@ -10,7 +10,6 @@ import Foundation
 import CoreLocation
 import MeshbluKit
 import SwiftyJSON
-import Result
 import Dollar
 
 @objc public protocol MeshbluBeaconKitDelegate {
