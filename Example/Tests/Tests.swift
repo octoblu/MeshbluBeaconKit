@@ -33,7 +33,6 @@ class MeshbluBeaconKitSpec: QuickSpec {
           }
           waitUntil { done in
             sut.sendLocationUpdate(["czar":"car"]) { (result) in
-              print(result.value)
               responseJSON = result.value
               responseError = result.error
               done()

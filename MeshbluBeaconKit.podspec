@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.homepage         = "https://github.com/octoblu/MeshbluBeaconKit"
   # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
   s.license          = 'MIT'
-  s.author           = { "Sqrt of Octoblu" => "sqrt@octoblu.com" }
+  s.author           = { "Octoblu" => "cocoapods@octoblu.com" }
   s.source           = { :git => "https://github.com/octoblu/MeshbluBeaconKit.git", :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/octoblu'
 
