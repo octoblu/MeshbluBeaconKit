@@ -1,9 +1,17 @@
-source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
 
-target 'MeshbluBeaconKit_Tests', :exclusive => true do
-  pod "MeshbluBeaconKit", :path => "../"
+def standard_pods
+    pod 'MeshbluBeaconKit', :path => '../'
+end
 
-  pod 'Quick', '~> 0.6.0'
-  pod 'Nimble', '2.0.0-rc.3'
+target 'MeshbluBeaconKit_Example' do
+    standard_pods
+end
+
+target 'MeshbluBeaconKit_Tests' do
+    standard_pods
+    pod 'Quick', '~> 0.8'
+    pod 'Nimble', '~> 3.0'
+    pod 'OHHTTPStubs' # Default subspecs, including support for NSURLSession & JSON etc
+    pod 'OHHTTPStubs/Swift' # Adds the Swiftier API wrapper too
 end
