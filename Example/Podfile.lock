@@ -1,11 +1,39 @@
 PODS:
-  - MeshbluBeaconKit (0.1.0)
+  - Alamofire (3.4.2)
+  - Dollar (5.2.0)
+  - MeshbluBeaconKit (2.6.0):
+    - Dollar (~> 5.2)
+    - MeshbluHttp (~> 1.0)
+    - Result (~> 2.1)
+  - MeshbluHttp (1.0.0):
+    - Alamofire (~> 3.4)
+    - Result (~> 2.1)
+    - SwiftyJSON (~> 2.3)
   - Nimble (3.2.0)
+  - OHHTTPStubs (5.2.0):
+    - OHHTTPStubs/Default (= 5.2.0)
+  - OHHTTPStubs/Core (5.2.0)
+  - OHHTTPStubs/Default (5.2.0):
+    - OHHTTPStubs/Core
+    - OHHTTPStubs/JSON
+    - OHHTTPStubs/NSURLSession
+    - OHHTTPStubs/OHPathHelpers
+  - OHHTTPStubs/JSON (5.2.0):
+    - OHHTTPStubs/Core
+  - OHHTTPStubs/NSURLSession (5.2.0):
+    - OHHTTPStubs/Core
+  - OHHTTPStubs/OHPathHelpers (5.2.0)
+  - OHHTTPStubs/Swift (5.2.0):
+    - OHHTTPStubs/Core
   - Quick (0.9.3)
+  - Result (2.1.3)
+  - SwiftyJSON (2.3.2)
 
 DEPENDENCIES:
   - MeshbluBeaconKit (from `../`)
   - Nimble (~> 3.0)
+  - OHHTTPStubs
+  - OHHTTPStubs/Swift
   - Quick (~> 0.8)
 
 EXTERNAL SOURCES:
@@ -13,10 +41,16 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  MeshbluBeaconKit: 2f1eb1aac7ba12eee2f4be2400ae8995614617c9
+  Alamofire: 6aa33201d20d069e1598891cf928883ff1888c7a
+  Dollar: 2748eaeec93d7c6df922478becdf3f782e51551c
+  MeshbluBeaconKit: 94ee3803cd0c8c0817dce9791843383438c75a0e
+  MeshbluHttp: f8c603b45d207feec71b50301b316db218ea140a
   Nimble: 703854335d181df169bbca9c97117b5cf8c47c1d
+  OHHTTPStubs: 29ae105797c3410112d10b217c8b7a55aab616b2
   Quick: 13a2a2b19a5d8e3ed4fd0c36ee46597fd77ebf71
+  Result: 18e1a7597fbcca5923c565b40a25a98afafdee02
+  SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
 
-PODFILE CHECKSUM: dcb68c369800a1b5bddda9a95e62365a425e5120
+PODFILE CHECKSUM: 91b598d92c586bda84a2f47f818975e2cd809937
 
 COCOAPODS: 1.0.1

@@ -1,0 +1,6 @@
+framework module MeshbluHttp {
+  umbrella header "MeshbluHttp-umbrella.h"
+
+  export *
+  module * { export * }
+}

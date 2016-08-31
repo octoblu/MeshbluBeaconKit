@@ -17,6 +17,7 @@ Pod::Spec.new do |s|
 
   s.source_files = 'MeshbluBeaconKit/Classes/**/*'
   s.frameworks = 'CoreLocation'
-  s.dependency 'MeshbluHttp', '~> 1.0.0'
-  s.dependency 'Dollar', '~> 4.0.1'
+  s.dependency 'MeshbluHttp', '~> 1.0'
+  s.dependency 'Dollar', '~> 5.2'
+  s.dependency 'Result', '~> 2.1'
 end

@@ -8,9 +8,10 @@
 
 import Foundation
 import CoreLocation
-import MeshbluKit
+import MeshbluHttp
 import SwiftyJSON
 import Dollar
+import Result
 
 @objc public protocol MeshbluBeaconKitDelegate {
   optional  func proximityChanged(response: [String: AnyObject])

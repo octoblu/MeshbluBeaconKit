@@ -21,10 +21,13 @@
   "frameworks": "CoreLocation",
   "dependencies": {
     "MeshbluHttp": [
-      "~> 1.0.0"
+      "~> 1.0"
     ],
     "Dollar": [
-      "~> 4.0.1"
+      "~> 5.2"
+    ],
+    "Result": [
+      "~> 2.1"
     ]
   }
 }
