@@ -24,14 +24,14 @@ public class MeshbluHttp {
     self.httpRequester = requester
   }
 
-  public func isNotRegistered() -> Bool {
-    return self.meshbluConfig["uuid"] == nil
-  }
-
   public func setCredentials(uuid: String, token: String) {
     self.meshbluConfig.updateValue(uuid, forKey: "uuid")
     self.meshbluConfig.updateValue(token, forKey: "token")
     self.httpRequester.setCredentials(uuid, password: token)
+  }
+  
+  public func setCredentials(bearer: String) {
+    self.httpRequester.setCredentials(bearer)
   }
 
   public func claimDevice(uuid: String, handler: (Result<JSON, NSError>) -> ()){

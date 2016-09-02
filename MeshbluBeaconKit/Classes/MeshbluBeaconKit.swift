@@ -30,9 +30,11 @@ import Result
   var delegate: MeshbluBeaconKitDelegate
   let locationManager = CLLocationManager()
   var debug = false;
+  var meshbluConfig : [String: AnyObject]!
   
   public init(meshbluConfig: [String: AnyObject], delegate: MeshbluBeaconKitDelegate) {
     self.meshbluHttp = MeshbluHttp(meshbluConfig: meshbluConfig)
+    self.meshbluConfig = meshbluConfig
     let uuid = meshbluConfig["uuid"] as? String
     let token = meshbluConfig["token"] as? String
     if uuid != nil && token != nil {
@@ -45,6 +47,7 @@ import Result
   public init(meshbluHttp: MeshbluHttp, delegate: MeshbluBeaconKitDelegate) {
     self.meshbluHttp = meshbluHttp
     self.delegate = delegate
+    self.meshbluConfig = [:]
     super.init()
   }
   
@@ -71,9 +74,13 @@ import Result
       startBeacon(uuid, identifier: identifier);
     }
     
-    if self.meshbluHttp.isNotRegistered() {
+    if self.isNotRegistered() {
       self.delegate.meshbluBeaconIsNotRegistered!()
     }
+  }
+  
+  public func isNotRegistered() -> Bool {
+    return self.meshbluConfig["uuid"] == nil
   }
   
   private func startBeacon(uuid: String, identifier: String){
@@ -113,9 +120,7 @@ import Result
         
         self.meshbluHttp.setCredentials(uuid, token: token)
         
-        var data = Dictionary<String, AnyObject>()
-        data["uuid"] = uuid
-        data["token"] = token
+        var data = ["uuid": uuid, "token": token]
         self.delegate.meshbluBeaconRegistrationSuccess!(data)
       }
     }

@@ -9,6 +9,7 @@ public class MeshbluHttpRequester {
   var manager : Alamofire.Manager
   var username : String?
   var password : String?
+  var bearer : String?
 
   public init(host : String, port : Int){
     self.host = host
@@ -28,6 +29,10 @@ public class MeshbluHttpRequester {
   public func setCredentials(username : String, password : String) {
     self.username = username
     self.password = password
+  }
+
+  public func setCredentials(bearer : String) {
+    self.bearer = bearer
   }
 
   private func getRequest(method: String, path : String, parameters : [String: AnyObject]) -> Request{
@@ -50,6 +55,9 @@ public class MeshbluHttpRequester {
       let credentialData = "\(username!):\(password!)".dataUsingEncoding(NSUTF8StringEncoding)!
       let base64Credentials = credentialData.base64EncodedStringWithOptions(NSDataBase64EncodingOptions(rawValue: 0))
       headers.updateValue("Basic \(base64Credentials)", forKey: "Authorization")
+    }
+    if bearer != nil {
+      headers.updateValue("Bearer \(bearer)", forKey: "Authorization")
     }
 
     switch method {

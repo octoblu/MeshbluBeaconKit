@@ -3,9 +3,9 @@ PODS:
   - Dollar (5.2.0)
   - MeshbluBeaconKit (2.6.0):
     - Dollar (~> 5.2)
-    - MeshbluHttp (~> 1.0)
+    - MeshbluHttp (~> 1.1)
     - Result (~> 2.1)
-  - MeshbluHttp (1.0.0):
+  - MeshbluHttp (1.1.0):
     - Alamofire (~> 3.4)
     - Result (~> 2.1)
     - SwiftyJSON (~> 2.3)
@@ -43,8 +43,8 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Alamofire: 6aa33201d20d069e1598891cf928883ff1888c7a
   Dollar: 2748eaeec93d7c6df922478becdf3f782e51551c
-  MeshbluBeaconKit: 94ee3803cd0c8c0817dce9791843383438c75a0e
-  MeshbluHttp: f8c603b45d207feec71b50301b316db218ea140a
+  MeshbluBeaconKit: 4e1255538063f47270dbdb22e57992e557941858
+  MeshbluHttp: 26e1ad7fa10d7cfc04574d1c9ed26d36bc6e6ce4
   Nimble: 703854335d181df169bbca9c97117b5cf8c47c1d
   OHHTTPStubs: 29ae105797c3410112d10b217c8b7a55aab616b2
   Quick: 13a2a2b19a5d8e3ed4fd0c36ee46597fd77ebf71
