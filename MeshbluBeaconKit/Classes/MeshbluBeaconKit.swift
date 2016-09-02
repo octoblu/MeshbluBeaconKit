@@ -107,9 +107,14 @@ import Result
   }
   
   public func register() {
-    let device = ["type": "device:beacon-blu", "online" : "true"]
+    register([:])
+  }
+  
+  public func register(data: [String:AnyObject]) {
+    let device = ["type": "device:beacon-blu", "online" : "true"] as [String: AnyObject]
+    let mergedDevice = $.merge(device, data)
     
-    self.meshbluHttp.register(device) { (result) -> () in
+    self.meshbluHttp.register(mergedDevice) { (result) -> () in
       switch result {
       case .Failure(_):
         self.delegate.meshbluBeaconRegistrationFailure!(result.error!)
